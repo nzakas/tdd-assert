@@ -1,3 +1,9 @@
+
+jsonlint=node_modules/jsonlint/lib/cli.js
+eslint=node_modules/eslint/bin/eslint
+
+
+
 all: test
 
 link:
@@ -5,9 +11,9 @@ link:
 	@npm install
 
 lint:
-	@node node_modules/jshint/bin/jshint package.json
-	@node node_modules/jshint/bin/jshint .eslintrc
-	@node node_modules/eslint/bin/eslint tdd-assert.js
+	@node $(jsonlint) -q -c package.json
+	@node $(jsonlint) -q -c .eslintrc
+	@node $(eslint) tdd-assert.js
 
 test: link lint
 	@echo Running Node.js tests
