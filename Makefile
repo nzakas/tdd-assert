@@ -1,11 +1,5 @@
 all: test
 
-clean:
-	@rm -r coverage
-	@rm -r docs
-	@rm npm-debug.log
-	@echo Done
-
 link:
 	@npm prune
 	@npm link
@@ -20,3 +14,21 @@ docs:
 	@echo Generating documentation
 	@node node_modules/jsdoc/jsdoc.js -d docs tdd-assert.js
 	@echo Documentation has been output to /docs
+
+patch: test
+	@git checkout release
+	@git merge master
+	@npm version patch
+	@bash scripts/changelog-update.sh
+
+minor: test
+	@git checkout release
+	@git merge master
+	@npm version minor
+	@bash scripts/changelog-update.sh
+
+major: test
+	@git checkout release
+	@git merge master
+	@npm version major
+	@bash scripts/changelog-update.sh
