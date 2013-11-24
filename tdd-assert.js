@@ -2,7 +2,39 @@
  * @fileoverview Simple assertion library for use with TDD frameworks.
  * @author Nicholas C. Zakas
  */
+
+
+/**
+ * Top level namespace.
+ * @namespace
+ */
 var TDDAssert = {};
+
+//------------------------------------------------------------------------------
+// Custom Types
+//------------------------------------------------------------------------------
+
+/**
+ * The object type that is thrown when an assertion error occurs.
+ * @param {string} message The error message.
+ * @constructor
+ */
+TDDAssert.AssertionError = function(message) {
+    this.message = message;
+};
+
+TDDAssert.AssertionError.prototype = new Error();
+TDDAssert.AssertionError.prototype.name = "AssertionError";
+TDDAssert.AssertionError.prototype.constructor = TDDAssert.AssertionError;
+
+//------------------------------------------------------------------------------
+// Primary Interface
+//------------------------------------------------------------------------------
+
+/**
+ * Where the assertions live.
+ * @namespace
+ */
 TDDAssert.assert = (function() {
 
     "use strict";
@@ -13,22 +45,7 @@ TDDAssert.assert = (function() {
 
     var count = 0;
 
-    //--------------------------------------------------------------------------
-    // Custom Types
-    //--------------------------------------------------------------------------
 
-    /**
-     * The object type that is thrown when an assertion error occurs.
-     * @param {string} message The error message.
-     * @constructor
-     */
-    function AssertionError(message) {
-        this.message = message;
-    }
-
-    AssertionError.prototype = new Error();
-    AssertionError.prototype.name = "AssertionError";
-    AssertionError.prototype.constructor = AssertionError;
 
     //--------------------------------------------------------------------------
     // Helpers
@@ -45,7 +62,7 @@ TDDAssert.assert = (function() {
         count++;
 
         if (!value) {
-            throw new AssertionError(message);
+            throw new TDDAssert.AssertionError(message);
         }
     }
 
@@ -120,7 +137,7 @@ TDDAssert.assert = (function() {
          * @throws {AssertionError} All the time.
          */
         fail: function(message) {
-            throw new AssertionError(message);
+            throw new TDDAssert.AssertionError(message);
         },
 
         //----------------------------------------------------------------------

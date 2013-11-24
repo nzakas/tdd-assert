@@ -23,7 +23,8 @@
         "istanbul": "~0.1.45",
         "mocha": "~1.13.0",
         "mocha-phantomjs": "~3.1.1",
-        "phantomjs": "~1.9.2"
+        "phantomjs": "~1.9.2",
+        "jsdoc": "~3.3.0"
     },
 
     "license": "BSD",
