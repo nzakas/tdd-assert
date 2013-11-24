@@ -1,8 +1,14 @@
 
+
+# Programs
 jsonlint=node_modules/jsonlint/lib/cli.js
 eslint=node_modules/eslint/bin/eslint
+istanbul=node_modules/istanbul/lib/cli.js
+mochanode=node_modules/mocha/bin/_mocha
+mochaphantom=node_modules/mocha-phantomjs/bin/mocha-phantomjs
+jsdoc=node_modules/jsdoc/jsdoc.js
 
-
+# Tasks
 
 all: test
 
@@ -17,12 +23,12 @@ lint:
 
 test: link lint
 	@echo Running Node.js tests
-	@node node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha tests/*.js
+	@node $(istanbul) cover $(mochanode) tests/*.js
 	@echo Running PhantomJS tests
-	@node node_modules/mocha-phantomjs/bin/mocha-phantomjs -R dot tests/tests.htm
+	@node $(mochaphantom) -R dot tests/tests.htm
 
 docs:
 	@echo Generating documentation
-	@node node_modules/jsdoc/jsdoc.js -d docs tdd-assert.js
+	@node $(jsdoc) -d docs tdd-assert.js
 	@echo Documentation has been output to /docs
 
