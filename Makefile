@@ -4,7 +4,11 @@ link:
 	@npm prune
 	@npm link
 
-test: link
+lint:
+	@node node_modules/jshint/bin/jshint tdd-assert.js
+	@node node_modules/jshint/bin/jshint package.json
+
+test: link lint
 	@echo Running Node.js tests
 	@node node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha tests/*.js
 	@echo Running PhantomJS tests
