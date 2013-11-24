@@ -2,11 +2,12 @@ all: test
 
 link:
 	@npm prune
-	@npm install --save
+	@npm install
 
 lint:
-	@node node_modules/jshint/bin/jshint tdd-assert.js
 	@node node_modules/jshint/bin/jshint package.json
+	@node node_modules/jshint/bin/jshint .eslintrc
+	@node node_modules/eslint/bin/eslint tdd-assert.js
 
 test: link lint
 	@echo Running Node.js tests

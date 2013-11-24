@@ -1,0 +1,11 @@
+{
+    "env": {
+        "node": true,
+        "browser": true
+    },
+
+    "rules": {
+        "eqeqeq": 0,
+        "no-spaced-func": 0
+    }
+}

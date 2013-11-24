@@ -14,18 +14,24 @@ var TDDAssert = {};
 // Custom Types
 //------------------------------------------------------------------------------
 
-/**
- * The object type that is thrown when an assertion error occurs.
- * @param {string} message The error message.
- * @constructor
- */
-TDDAssert.AssertionError = function(message) {
-    this.message = message;
-};
+(function() {
 
-TDDAssert.AssertionError.prototype = new Error();
-TDDAssert.AssertionError.prototype.name = "AssertionError";
-TDDAssert.AssertionError.prototype.constructor = TDDAssert.AssertionError;
+    "use strict";
+
+    /**
+     * The object type that is thrown when an assertion error occurs.
+     * @param {string} message The error message.
+     * @constructor
+     */
+    TDDAssert.AssertionError = function(message) {
+        this.message = message;
+    };
+
+    TDDAssert.AssertionError.prototype = new Error();
+    TDDAssert.AssertionError.prototype.name = "AssertionError";
+    TDDAssert.AssertionError.prototype.constructor = TDDAssert.AssertionError;
+
+}());
 
 //------------------------------------------------------------------------------
 // Primary Interface
@@ -44,8 +50,6 @@ TDDAssert.assert = (function() {
     //--------------------------------------------------------------------------
 
     var count = 0;
-
-
 
     //--------------------------------------------------------------------------
     // Helpers
