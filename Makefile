@@ -2,7 +2,7 @@ all: test
 
 link:
 	@npm prune
-	@npm install --save-dev
+	@npm install --save
 
 lint:
 	@node node_modules/jshint/bin/jshint tdd-assert.js
