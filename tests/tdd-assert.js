@@ -1,4 +1,4 @@
-var TDDAssert = (typeof require !== "undefined") ? require("../lib/assert.js") : window.TDDAssert,
+var TDDAssert = (typeof require !== "undefined") ? require("../tdd-assert.js") : window.TDDAssert,
     assert = TDDAssert.assert;
 
 
