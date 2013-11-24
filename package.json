@@ -1,34 +1,29 @@
 {
-    "name": "tdd-assert",
-    "author": "Nicholas C. Zakas",
-    "version": "0.1.0-dev",
-    "description": "A simple assert library for use with TDD frameworks",
-    "main": "tdd-assert.js",
-
-    "scripts": {
-        "test": "make test"
-    },
-
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/nzakas/tdd-assert.git"
-    },
-
-    "keywords": [
-        "assert",
-        "tdd"
-    ],
-
-    "devDependencies": {
-        "istanbul": "~0.1.45",
-        "mocha": "~1.13.0",
-        "mocha-phantomjs": "~3.1.1",
-        "phantomjs": "~1.9.2",
-        "jsdoc": "~3.3.0"
-    },
-
-    "license": "BSD",
-    "bugs": {
-        "url": "https://github.com/nzakas/tdd-assert/issues"
-    }
+  "name": "tdd-assert",
+  "author": "Nicholas C. Zakas",
+  "version": "0.1.1",
+  "description": "A simple assert library for use with TDD frameworks",
+  "main": "tdd-assert.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nzakas/tdd-assert.git"
+  },
+  "keywords": [
+    "assert",
+    "tdd"
+  ],
+  "devDependencies": {
+    "istanbul": "~0.1.45",
+    "mocha": "~1.13.0",
+    "mocha-phantomjs": "~3.1.1",
+    "phantomjs": "~1.9.2",
+    "jsdoc": "~3.3.0"
+  },
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/nzakas/tdd-assert/issues"
+  }
 }
