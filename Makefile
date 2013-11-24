@@ -20,3 +20,10 @@ docs:
 	@echo Generating documentation
 	@node node_modules/jsdoc/jsdoc.js -d docs tdd-assert.js
 	@echo Documentation has been output to /docs
+
+patch:
+	git checkout release
+	npm version patch
+	bash scripts/changelog-update.sh
+
+
