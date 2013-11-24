@@ -1,7 +1,7 @@
 {
     "name": "tdd-assert",
     "author": "Nicholas C. Zakas",
-    "version": "0.1.0-dev",
+    "version": "0.2.0-dev",
     "description": "A simple assert library for use with TDD frameworks",
     "main": "tdd-assert.js",
 

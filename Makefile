@@ -2,7 +2,7 @@ all: test
 
 link:
 	@npm prune
-	@npm link
+	@npm install --save-dev
 
 lint:
 	@node node_modules/jshint/bin/jshint tdd-assert.js
@@ -19,20 +19,3 @@ docs:
 	@node node_modules/jsdoc/jsdoc.js -d docs tdd-assert.js
 	@echo Documentation has been output to /docs
 
-patch: test
-	@git checkout release
-	@git merge master
-	@npm version patch
-	@bash scripts/changelog-update.sh
-
-minor: test
-	@git checkout release
-	@git merge master
-	@npm version minor
-	@bash scripts/changelog-update.sh
-
-major: test
-	@git checkout release
-	@git merge master
-	@npm version major
-	@bash scripts/changelog-update.sh
